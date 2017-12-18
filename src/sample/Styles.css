@@ -1,0 +1,20 @@
+.background{
+    -fx-background-color: #1d1d1d;
+}
+
+.root{
+    -fx-background-color: #1d1d1d;
+}
+
+.text-area .content {
+     -fx-background-radius: 8;
+}
+
+.text-area{
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}
+
+#textPanel{
+    -fx-padding: 16 0 16 0;
+}
