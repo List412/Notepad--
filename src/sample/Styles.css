@@ -3,7 +3,7 @@
 }
 
 .root{
-    -fx-background-color: #1d1d1d;
+    -fx-background-color: #61116e;
 }
 
 .text-area .content {
@@ -17,4 +17,12 @@
 
 #textPanel{
     -fx-padding: 16 0 16 0;
+}
+
+#leftPane{
+    -fx-padding: 16 0 16 8;
+}
+
+#rightPane{
+    -fx-padding: 16 8 16 0;
 }

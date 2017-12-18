@@ -9,6 +9,10 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.web.HTMLEditor?>
 
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.layout.AnchorPane?>
 <GridPane
         alignment="CENTER" hgap="10" stylesheets="@Styles.css" vgap="10"
         xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
@@ -26,7 +30,28 @@
 
     <children>
 
-        <GridPane GridPane.columnIndex="0">
+        <GridPane alignment="CENTER_RIGHT" fx:id="leftPane" GridPane.columnIndex="0">
+
+            <FlowPane hgap="10" vgap="32" orientation="VERTICAL" alignment="CENTER">
+                <AnchorPane>
+                    <Button fx:id="btn_new" onAction="#newDoc_bnt_action" >New</Button>
+                </AnchorPane>
+                <AnchorPane>
+                    <Button fx:id="btn_open" onAction="#openDoc_btn_action">Open</Button>
+                </AnchorPane>
+                <AnchorPane>
+                    <Button fx:id="btn_save" onAction="#saveDoc_btn_action" >Save</Button>
+                </AnchorPane>
+                <AnchorPane>
+                    <Button fx:id="btn_saveAs" onAction="#saveDocAS_btn_action" >Save as</Button>
+                </AnchorPane>
+            </FlowPane>
+
+        </GridPane>
+        <StackPane fx:id="textPanel" GridPane.columnIndex="1">
+            <TextArea fx:id="txtArea"/>
+        </StackPane>
+        <GridPane alignment="CENTER_LEFT" fx:id="rightPane" GridPane.columnIndex="2">
             <rowConstraints>
                 <RowConstraints minHeight="25" percentHeight="25.0"/>
                 <RowConstraints minHeight="25" percentHeight="25.0"/>
@@ -41,10 +66,5 @@
                 <Button GridPane.rowIndex="3">Save as</Button>
             </children>
         </GridPane>
-        <StackPane fx:id="textPanel" GridPane.columnIndex="1">
-            <TextArea></TextArea>
-
-        </StackPane>
-        <FlowPane orientation="VERTICAL" GridPane.columnIndex="2"></FlowPane>
     </children>
 </GridPane>
