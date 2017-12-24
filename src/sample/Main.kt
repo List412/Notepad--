@@ -9,21 +9,20 @@ import javafx.stage.Stage
 class Main : Application() {
 
     override fun start(primaryStage: Stage) {
-        val fxmlLoader = FXMLLoader( javaClass.getResource("sample.fxml"));
+        val fxmlLoader = FXMLLoader( javaClass.getResource("notepad.fxml"))
         val root = fxmlLoader.load<Parent>()
-
-
-        (fxmlLoader.getController() as MainController).setStage(primaryStage)
+        val cont = fxmlLoader.getController() as MainController
+        cont.setStage(primaryStage)
+        cont.showRecentFiles()
+        cont.fillCmb()
         primaryStage.title = "Hello World"
-        primaryStage.scene = Scene(root, 600.0, 400.0)
+        primaryStage.scene = Scene(root, 800.0, 500.0)
         primaryStage.show()
     }
 
 
     companion object {
-        @JvmStatic
-        fun main(args: Array<String>) {
-           // Application.launch(*args)
+        @JvmStatic fun main(args: Array<String>) {
             launch(Main::class.java)
         }
     }

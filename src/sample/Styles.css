@@ -6,6 +6,29 @@
     -fx-background-color: #61116e;
 }
 
+.text-area{
+    -fx-font-family: "Times New Roman";
+}
+
+.label-white {
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: white;
+    -fx-opacity: 0.9;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+
+.flow-pane{
+    -fx-background-color: blue;
+}
+
 .text-area .content {
      -fx-background-radius: 8;
 }

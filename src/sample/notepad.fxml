@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.control.ComboBox?>
+<GridPane alignment="CENTER" hgap="10" stylesheets="@Styles.css" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController">
+
+    <columnConstraints>
+        <ColumnConstraints minWidth="10.0" percentWidth="10.0" />
+        <ColumnConstraints minWidth="10.0" percentWidth="10.0" />
+        <ColumnConstraints minWidth="10.0" percentWidth="60.0" />
+        <ColumnConstraints minWidth="10.0" percentWidth="20.0" />
+    </columnConstraints>
+
+    <rowConstraints>
+        <RowConstraints minHeight="200" percentHeight="100.0" />
+    </rowConstraints>
+
+    <children>
+
+        <ScrollPane hbarPolicy="NEVER" pannable="true" stylesheets="@Styles.css" vbarPolicy="NEVER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+
+            <VBox fx:id="vbox_FileHistory" alignment="TOP_CENTER">
+                <GridPane.margin>
+                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                </GridPane.margin>
+            </VBox>
+        </ScrollPane>
+
+        <VBox alignment="CENTER" GridPane.columnIndex="1">
+            <Button fx:id="btn_new" alignment="CENTER" maxWidth="1.7976931348623157E308" onAction="#newDoc_bnt_action" text="Новый">
+                <VBox.margin>
+                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                </VBox.margin>
+            </Button>
+
+            <Button fx:id="btn_open" maxWidth="1.7976931348623157E308" onAction="#openDoc_btn_action" text="Открыть">
+                <VBox.margin>
+                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                </VBox.margin>
+            </Button>
+
+            <Button fx:id="btn_save" maxWidth="1.7976931348623157E308" onAction="#saveDoc_btn_action" text="Сохранить">
+                <VBox.margin>
+                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                </VBox.margin>
+            </Button>
+
+            <Button fx:id="btn_saveAs" maxWidth="1.7976931348623157E308" onAction="#saveDocAS_btn_action" text="Сохранить как">
+                <VBox.margin>
+                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                </VBox.margin>
+            </Button>
+        </VBox>
+
+        <StackPane fx:id="textPanel" GridPane.columnIndex="2">
+            <TextArea fx:id="txtArea" />
+        </StackPane>
+        <GridPane fx:id="rightPane" alignment="CENTER_LEFT" GridPane.columnIndex="3">
+
+
+                <FlowPane hgap="16" orientation="VERTICAL" vgap="8" GridPane.rowIndex="0">
+                    <Label styleClass="label-white" text="Найти" />
+                    <TextField fx:id="search_txt" />
+                    <Label styleClass="label-white" text="Заменить" />
+                    <TextField fx:id="replace_txt" />
+                    <Button onAction="#replace_click" text="Заменить" />
+                    <ColorPicker fx:id="colorPic" editable="true" onAction="#changeColor" GridPane.rowIndex="1" >
+                        <value>
+                            <Color blue="0.0" green="0.0" red="0.0" />
+                        </value>
+                    </ColorPicker>
+
+                    <ComboBox fx:id="cmb_size" onAction="#sizeChange" >
+
+                    </ComboBox>
+                    <ComboBox fx:id="cmb_font" onAction="#fontChange" ></ComboBox>
+
+                </FlowPane>
+         <columnConstraints>
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+         </rowConstraints>
+
+
+        </GridPane>
+    </children>
+</GridPane>
